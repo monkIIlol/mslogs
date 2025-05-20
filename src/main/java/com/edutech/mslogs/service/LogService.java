@@ -18,7 +18,7 @@ public class LogService {
     }
 
     public Log findById(int idLog) {
-        return logRepository.getIdLog(idLog);
+        return logRepository.findById(idLog);
     }
 
     public Log save(Log log) {

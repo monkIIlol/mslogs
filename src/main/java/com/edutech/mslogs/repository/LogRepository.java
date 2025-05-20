@@ -12,7 +12,7 @@ public interface LogRepository extends JpaRepository<Log, Integer> {
 
     List<Log> findAll();
 
-    Log getIdLog(int idLog);
+    Log findById(int idLog);
 
     @SuppressWarnings("unchecked")
     Log save(Log log);
