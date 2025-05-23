@@ -17,4 +17,5 @@ public interface LogRepository extends JpaRepository<Log, Integer> {
     @SuppressWarnings("unchecked")
     Log save(Log log);
     
+    void deleteById(int igLog);
 }

@@ -24,5 +24,9 @@ public class LogService {
     public Log save(Log log) {
         return logRepository.save(log);
     }
+
+    public void deleteById(int idLog) {
+        logRepository.deleteById(idLog);
+    }
     
 }

@@ -31,8 +31,8 @@ public class Log {
     @Column(length = 20, nullable = false)
     private String origenServicio;
 
-    //@Column(nullable = false)
-    //private int idUsuario;
+    @Column(nullable = false)
+    private int idUsuario;
 
     @Column(length = 500, nullable = false)
     private String descripcionLog;
