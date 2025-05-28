@@ -59,17 +59,8 @@ public class LogController {
     
     @PutMapping("/{idLog}")
     public ResponseEntity<Log> updateClase(@PathVariable int idLog, @RequestBody Log log) {
-        Log buscar = logService.findById(idLog);
-        if(buscar != null) {
-            buscar.setIdLog(idLog);
-            buscar.setFechaCreacionLog(log.getFechaCreacionLog());
-            buscar.setOrigenServicio(log.getOrigenServicio());
-            buscar.setIdUsuario(log.getIdUsuario());
-            buscar.setDescripcionLog(log.getDescripcionLog());
-            buscar.setMensajeLog(log.getMensajeLog());
-
-            logService.save(buscar);
-            return new ResponseEntity<>(buscar, HttpStatus.OK);
+        if(logService.update(idLog, log)) {
+            return new ResponseEntity<>(log, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }

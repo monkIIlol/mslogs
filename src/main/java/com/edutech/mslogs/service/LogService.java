@@ -28,5 +28,21 @@ public class LogService {
     public void deleteById(int idLog) {
         logRepository.deleteById(idLog);
     }
+
+    public boolean update(int idLog, Log log) {
+        Log lo = logRepository.findById(idLog);
+        if(lo != null) {
+            lo.setFechaCreacionLog(log.getFechaCreacionLog());
+            lo.setOrigenServicio(log.getOrigenServicio());
+            lo.setIdUsuario(log.getIdUsuario());
+            lo.setDescripcionLog(log.getDescripcionLog());
+            lo.setMensajeLog(log.getMensajeLog());
+
+            logRepository.save(lo);
+            return true;
+        }else{
+            return false;
+        }
+    }
     
 }
